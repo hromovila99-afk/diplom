@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Сайт с градиентным фоном</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+			min-height: 100vh;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			color: white;
+			margin-bottom: 30px;
+		}
+
+		.links-section {
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.link-item {
+			margin: 15px 0;
+			padding: 10px;
+			border-bottom: 1px solid #eee;
+		}
+
+		.link-item a {
+			color: #1E90FF;
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+		.link-item a:hover {
+			color: #0056b3;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+	
+
+		<div class="links-section">
+			<div class="link-item">
+				<a href="https://example.com/page1">Ссылка 1</a>
+			</div>
+
+			<div class="link-item">
+				<a href="https://example.com/page2">Ссылка 2</a>
+			</div>
+
+			<div class="link-item">
+				<a href="https://example.com/page3">Ссылка 3</a>
+			</div>
+
+			<div class="link-item">
+				<a href="https://example.com/page4">Ссылка 4</a>
+			</div>
+
+			<div class="link-item">
+				<a href="https://example.com/page5">Ссылка 5</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
