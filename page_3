@@ -1,80 +1,105 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="ru"> <!-- Исправлено: lahg -> lang -->
+<head>
+    <title>Пример работ с JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Добавлен viewport для адаптивности -->
+</head>
+<body>
 <div id="app">
-  <canvas id="canvas"></canvas>
-  <a target="_blank" href="https://www.framer.com/@kevin-levron/">Framer Component</a>
-  <div class="buttons">
-    <button type="button" id="colors-btn">
-      Random colors
-    </button>
-    <a href="https://www.framer.com/@kevin-levron/" target="_blank">
-      Framer Component
-    </a>
-  </div>
+    <canvas id="canvas"></canvas>
+    <div class="buttons">
+        <button type="button" id="colors-btn">
+            Random colors
+        </button>
+        <a href="https://www.framer.com/@kevin-levron/" target="_blank">
+            Framer Component
+        </a>
+    </div>
 </div>
 
-body, html, #app {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
+<style>
+    body, html, #app {
+        margin: 0;
+        padding: 0; /* Добавлено для полноты сброса стилей */
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Добавлено для предотвращения скролла */
+    }
 
-body {
-  touch-action: none;
-}
+    body {
+        touch-action: none;
+        font-family: "Montserrat", sans-serif; /* Исправлено: serif -> sans-serif для Montserrat */
+    }
 
-#app {
-  height: 100%;
-  font-family: "Montserrat", serif;
-}
+    #app {
+        height: 100%;
+        position: relative; /* Добавлено для корректного позиционирования */
+    }
 
-#canvas {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
+    #canvas {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1; /* Добавлено для правильного наслоения */
+    }
 
+    .buttons {
+        position: fixed;
+        width: 100%;
+        bottom: 15px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
 
-.buttons {
-  position: fixed;
-  width: 100%;
-  bottom: 15px;
-  z-index: 2;
+    button, a {
+        color: black;
+        font-family: "Montserrat", sans-serif; /* Исправлено: serif -> sans-serif */
+        font-size: 12px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding: 4px 8px;
+        cursor: pointer; /* Добавлено для интерактивности */
+    }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
+    button:hover, a:hover {
+        background: rgba(255, 255, 255, 0.7); /* Добавлен эффект при наведении */
+    }
+</style>
 
-button, a {
-  color: black;
-  font-family: "Montserrat", serif;
-  font-size: 12px;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  border: 1px solid grey;
-  padding: 4px 8px;
-}
-// Licence CC BY-NC-SA 4.0
-// Attribution — You must give appropriate credit.
-// NonCommercial — You may not use the material for commercial purposes.
+<!-- Перемещен скрипт в отдельный тег script -->
+<script type="module">
+    // Импорт библиотеки
+    import AttractionCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.26/build/cursors/attraction1.min.js";
 
-import AttractionCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.26/build/cursors/attraction1.min.js"
+    // Инициализация приложения
+    const app = AttractionCursor(document.getElementById('canvas'), {
+        particles: {
+            attractionIntensity: 5,
+            size: 5,
+        },
+    });
 
-const app = AttractionCursor(document.getElementById('canvas'), {
-  particles: {
-    attractionIntensity: 5,
-    size: 5,  
-  },
-})
+    // Обработчик кнопки
+    const button1 = document.getElementById('colors-btn');
+    
+    if (button1) { // Проверка на существование элемента
+        button1.addEventListener('click', () => {
+            if (app && app.particles) {
+                app.particles.light1.color.set(Math.random() * 0xffffff);
+                app.particles.light2.color.set(Math.random() * 0xffffff);
+            }
+        });
+    }
+</script>
 
-const button1 = document.getElementById('colors-btn')
-
-button1.addEventListener('click', () => {
-  app.particles.light1.color.set(Math.random() * 0xffffff)
-  app.particles.light2.color.set(Math.random() * 0xffffff)
-})
+</body>
+</html>
