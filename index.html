@@ -1,5 +1,5 @@
 
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -163,6 +163,10 @@
 
 		.link-card.deepseek {
 			color: #10B981;
+		}
+
+		.link-card.price {
+			color: #FF6B6B;
 		}
 
 		.link-card h4 {
@@ -402,6 +406,16 @@
 							<p>AI-ассистент для разработки</p>
 							<small>deepseek.com</small>
 						</a>
+
+						<!-- НОВЫЙ КОНТЕЙНЕР PRICE LIST -->
+						<a href="https://docs.google.com/spreadsheets/d/1P_YYrTDRqRPkoNaCquK2hJxajNbY8qdGVjLgklpOTXg/edit?usp=sharing" 
+						   target="_blank" 
+						   class="link-card price">
+							<div class="link-icon">💰</div>
+							<h4>Price List</h4>
+							<p>Прайс-лист услуг</p>
+							<small>https://docs.google.com/</small>
+						</a>
 					</div>
 				</section>
 
@@ -458,6 +472,7 @@
 						</div>
 					</div>
 				</section>
+			</div>
 		</main>
 
 		<!-- Футер -->
@@ -477,18 +492,18 @@
 
 	<script>
 		// Установка текущей даты
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('ru-RU');
+		document.getElementById('current-date').textContent = new Date().toLocaleDateString('ru-RU');
 
-        // Простая анимация при загрузке
-        document.addEventListener('DOMContentLoaded', function () {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        });
+		// Простая анимация при загрузке
+		document.addEventListener('DOMContentLoaded', function () {
+			const elements = document.querySelectorAll('.fade-in');
+			elements.forEach((el, index) => {
+				setTimeout(() => {
+					el.style.opacity = '1';
+					el.style.transform = 'translateY(0)';
+				}, index * 100);
+			});
+		});
 	</script>
 </body>
 
