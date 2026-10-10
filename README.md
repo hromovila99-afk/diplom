@@ -1,1 +1,2 @@
+![Uploading Untitled.png…]()
 # diplom
